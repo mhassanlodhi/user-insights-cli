@@ -1,13 +1,27 @@
 {
     "name": "user-insights-cli",
-    "version": "1.0.0",
-    "description": "A CLI that fetches users, posts, and todos from JSONPlaceholder and reports per-user insights.",
+    "version": "2.0.0",
+    "description": "A CLI that fetches users, posts, and todos from JSONPlaceholder and reports per-user insights. Written in strict TypeScript.",
     "type": "module",
-    "main": "index.js",
+    "main": "dist/index.js",
     "scripts": {
-        "start": "node index.js"
+        "start": "ts-node --esm src/index.ts",
+        "build": "tsc",
+        "typecheck": "tsc --noEmit",
+        "lint": "eslint src/**/*.ts",
+        "format": "prettier --write src/**/*.ts"
     },
     "engines": {
         "node": ">=18"
+    },
+    "devDependencies": {
+        "@types/node": "^20.19.43",
+        "@typescript-eslint/eslint-plugin": "^8.64.0",
+        "@typescript-eslint/parser": "^8.64.0",
+        "eslint": "^9.39.5",
+        "eslint-config-prettier": "^9.1.2",
+        "prettier": "^3.9.5",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.9.3"
     }
 }
